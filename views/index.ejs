@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>To Do List</title>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-custom navbar-mainbg ">
+      
+          <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+      
+              <li class="nav-item">
+                <a class="nav-link" href="/"><i class="far fa-calendar-alt"></i>Today</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/work"><i class="far fa-clone"></i>Work</a>
+              </li>
+      
+      
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <main>
+      <div class="box" id="heading">
+            <%if(locals.heading){%>
+                <h1><%=heading %></h1>
+            <%}else {%>
+                <h1>To Do List</h1>
+            <%}%>
+      </div>
+      <div class="box">
+        
+            <%if(locals.todolist){
+                todolist.forEach(function(arrayElement){
+                    %><div class='item'><input type='checkbox'><p><%=arrayElement%></p></div>   
+                <% });%>
+            <%}%> 
+            <form class="item" action="/" method="post">        
+            <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+            
+            <button type="submit" name="list" value="<%if(locals.heading){%><%=heading%><%}%>" list="">+</button>
+          </form>   
+     </div>
+
+</main>
+
+</body>
