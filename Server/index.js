@@ -25,13 +25,13 @@ app.get("/",(req,res)=>
 {
     getToday();
     todolist=todolistToday;
-    res.render("index.ejs",{heading,todolist});
+    res.render("index",{heading,todolist});
 })
 app.get("/work",(req,res)=>
 {
     heading="Work List";
     todolist=todolistWork;
-    res.render("index.ejs",{heading,todolist});
+    res.render("index",{heading,todolist});
 })
 app.post("/", function(req, res){
     var item=req.body["newItem"];
@@ -48,7 +48,7 @@ app.post("/", function(req, res){
     }
     
     console.log(todolist);
-    res.render("index.ejs",{heading,todolist});
+    res.render("index",{heading,todolist});
 });
 app.listen(port,()=>
 {
