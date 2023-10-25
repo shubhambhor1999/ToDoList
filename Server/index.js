@@ -4,7 +4,8 @@ const bodyParser =require("body-parser");
 const app=express();
 const port=process.env.PORT||3000;
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public"))
+//app.use(express.static("public"))
+app.use("/styles", express.static(__dirname + '/public'));
 var heading="";
 var todolist=new Array();
 var todolistToday=new Array();
