@@ -5,7 +5,7 @@ const app=express();
 const port=process.env.PORT||3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 //app.use(express.static("public"))
-app.use("/static", express.static(__dirname + '/public'));
+app.use("/public", express.static(__dirname + '/public'));
 var heading="";
 var todolist=new Array();
 var todolistToday=new Array();
