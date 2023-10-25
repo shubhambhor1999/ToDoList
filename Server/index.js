@@ -19,6 +19,9 @@ function getToday()
     //console.log(heading)
 
 }
+app.set('view engine', 'ejs')
+app.set('views', __dirname + '/views')
+app.engine('ejs', require('ejs').__express);
 
 app.get("/",(req,res)=>
 {
